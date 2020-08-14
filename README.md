@@ -7,6 +7,20 @@ I plan on using a rasberry pi or arduino mega to scan barcodes and check againts
 <br>
 <br>
 
+## API Documentaion
+
+This is where the documentaion of the api that I create will go including the creation of the docker file and every single thing I installed to create a REST API for the tracking of the inventory.
+
+<br>
+<br>
+
+## Website intergration example
+
+This is where the example of adding the inventory tracking system to the production website I'm wrighting will go.
+
+<br>
+<br>
+
 ## Connect with me:
 
 [<img align="left" alt="codeSTACKr | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />][twitter]
