@@ -7,9 +7,89 @@ I plan on using a rasberry pi or arduino mega to scan barcodes and check againts
 <br>
 <br>
 
-## API Documentaion
+# API Documentaion
 
 This is where the documentaion of the api that I create will go including the creation of the docker file and every single thing I installed to create a REST API for the tracking of the inventory.
+
+## Usage
+
+All responses will be in this form:
+
+```JSON
+{
+    "data": "Mixed type holding the content of the response",
+    "message": "Description of what happened"
+}
+```
+
+### List all Items
+
+**Definition**
+
+`GET /iventory`
+
+**Response**
+
+- `200 OK` on success
+
+```JSON
+[
+    {
+        "item-id": "string",
+        "name": "string",
+        "barcode": "num",
+        "category": "string",
+        "inventory": "num",
+        "location": {
+            "site": "string",
+            "name": "string",
+            "shorthand": "string"
+        },
+    }
+]
+```
+
+### Adding a New Item
+
+**Definition**
+
+`POST /inventory`
+
+**Arguments**
+
+Item
+
+- `"item-id":string` Unique string of letters and numbers for idenification of an item e.g. `SX0001`
+- `"name":string` user readble name of the item e.g. `3-Pin XLR`
+- `"barcode":num` Barcode given to the item
+- `"category":string` Category of the item
+- `"inventory":num` Number of how many item are in storeage
+
+<br>
+Location
+
+- `"site":string` Name of site stored at e.g. `Paradise`
+- `"name":string` Name of room and shelf item is stored e.g. `TS-Shelf01`
+- `"shorthand":string` Short hand of the long version of name above e.g. `TS-S1`
+
+**Response**
+
+- `201 Created` on success
+
+```JSON
+{
+    "item-id": "string",
+    "name": "string",
+    "barcode": "num",
+    "category": "string",
+    "inventory": "num",
+    "location": {
+        "site": "string",
+        "name": "string",
+        "shorthand": "string"
+    },
+}
+```
 
 <br>
 <br>
