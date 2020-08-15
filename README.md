@@ -49,6 +49,9 @@ All responses will be in this form:
 ]
 ```
 
+<br>
+<br>
+
 ### Adding a New Item
 
 **Definition**
@@ -61,9 +64,9 @@ Item
 
 - `"item-id":string` Unique string of letters and numbers for idenification of an item e.g. `SX0001`
 - `"name":string` user readble name of the item e.g. `3-Pin XLR`
-- `"barcode":num` Barcode given to the item
-- `"category":string` Category of the item
-- `"inventory":num` Number of how many item are in storeage
+- `"barcode":num` Barcode given to the item e.g. `9772204821170`
+- `"category":string` Category of the item e.g. `Sound`
+- `"inventory":num` Number of how many item are in storage e.g. `31`
 
 <br>
 Location
@@ -90,6 +93,49 @@ Location
     },
 }
 ```
+
+<br>
+<br>
+
+### Looking up items details
+
+**Definition**
+
+`GET /inventory/<item-id>`
+
+**Response**
+
+- `404 Not Found` if the item does not exist
+- `200 OK` on success
+
+```JSON
+{
+    "item-id": "string",
+    "name": "string",
+    "barcode": "num",
+    "category": "string",
+    "inventory": "num",
+    "location": {
+        "site": "string",
+        "name": "string",
+        "shorthand": "string"
+    },
+}
+```
+
+<br>
+<br>
+
+### Looking up items details
+
+**Definition**
+
+`DELETE /inventory/<item-id>`
+
+**Response**
+
+- `404 Not Found` if the item does not exist
+- `204 No Content` on success
 
 <br>
 <br>
