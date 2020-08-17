@@ -7,6 +7,28 @@ I plan on using a rasberry pi or arduino mega to scan barcodes and check againts
 <br>
 <br>
 
+## Quick start
+
+For a quick start on the on the test api.
+
+```bash
+# Activate venv
+$ pipenv shell
+
+# Install dependencies
+$ pipenv install
+
+# Create DB
+$ python
+>> from app import db
+>> db.create_all()
+>> exit()
+
+# Run Server (http://localhst:5000)
+python app.py
+```
+
+
 # API Documentaion
 
 This is where the documentaion of the api that I create will go including the creation of the docker file and every single thing I installed to create a REST API for the tracking of the inventory.
